@@ -1,11 +1,9 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
     name: "Updates",
-    platforms: [
-        .iOS("9.0")
-    ],
+    platforms: [.iOS(.v12)],
     products: [
         .library(
             name: "Updates",
@@ -16,7 +14,10 @@ let package = Package(
         .target(
             name: "Updates",
             dependencies: [],
-            path: "Updates/Classes"
+            path: "Updates/Classes",
+            resources: [
+                .copy("Resources/PrivacyInfo.xcprivacy")
+            ]
         )
     ]
 )
